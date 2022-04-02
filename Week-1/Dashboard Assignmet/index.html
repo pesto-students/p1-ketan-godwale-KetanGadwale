@@ -14,7 +14,7 @@
     body {
       font-family: 'lato';
     }
-    #main{
+    #main::after {
       content: "";
       display: table;
       clear: both;
@@ -36,7 +36,7 @@
       vertical-align:top;
     }
     #big-image {
-      vertical-align:middle;
+      vertical-align: middle;
       margin:20px 50px;
       width: 200px;
       height: 200px;
@@ -60,6 +60,41 @@
       padding-bottom: 10px;
       padding-left: 18px;
       padding-right: 18px;
+    }
+    button {
+      background-color: transparent;
+      color: blue;
+    }
+    i.vertical {
+      position: relative;
+      /* Adjust these values accordingly */
+      padding-top: 10px;
+      padding-bottom: 40px;
+    }
+    i.hori {
+      padding-left: 220px;
+      padding-right: 0px;
+    }
+    button {
+      background-color: transparent;
+      color: blue;
+    }
+    footer {
+      background-color:rgb(80, 72, 188);
+    }
+    #small-image-span {
+      vertical-align:top;
+    }
+    #small-image {
+      margin:10px;
+      width: 70px;
+      height: 70px;
+    }
+    #lower-text {
+      display:inline-block;
+    }
+    p {
+      color:rgb(255, 255, 255);
     }
   </style>
 </head>
@@ -120,5 +155,22 @@
       </table>
     </section>
   </section>
+  <footer>
+    <span id="small-image-span">
+        <img id="small-image" src="https://vif1g.csb.app/src/assets/cattyboard.jpg">
+    </span>
+    <span id="lower-text">
+      <p>
+        <span class="footer"> If it aint love<br>caston derulo </span>
+        <span class ="ficon">
+          <i class="fa-solid fa-backward-step hori"></i>
+          <i class="fa-solid fa-pause hori"></i>
+          <i class="fa-solid fa-forward-step hori"></i>
+          <i class="fa-solid fa-rotate-right hori"></i>
+          <i class="fa-solid fa-shuffle hori"></i>
+        </span>
+      </p>
+    </span>
+  </footer>
 </body>
 </html>
