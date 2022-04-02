@@ -8,31 +8,78 @@
   <script src="https://kit.fontawesome.com/8c75bf0c13.js" crossorigin="anonymous"></script>
   <style>
     * {
-      box-sizing: border-box;
-      padding: 0;
+      padding: 0; 
       margin: 0;
     }
     body {
       font-family: 'lato';
     }
+    #main{
+      content: "";
+      display: table;
+      clear: both;
+    }
     navbar {
       display:inline-block;
       vertical-align:top;
       background-color: lightgray;
-      height: 100%;
+      height: 85%;
       padding: 5px 5px;
+    }
+    #upper-main {
+      display:inline-block;
+      background-color:rgb(65, 65, 65);
+      width: 98%;
+    }
+    #big-image-span {
+      display:inline-block;
+      vertical-align:top;
+    }
+    #big-image {
+      vertical-align:middle;
+      margin:20px 50px;
+      width: 200px;
+      height: 200px;
+    }
+    #upper-text {
+      display:inline-block;
+    }
+    h2, h5 {
+      color:rgb(255, 255, 255);
     }
   </style>
 </head>
 <body>
-  <navbar>
-    <tr> <i class="fa-solid fa-bars vertical"></i></tr><br><br>
-    <tr></tr> <i class="fa-solid fa-house vertical"></i></tr><br><br>
-    <tr><i class="fa-solid fa-magnifying-glass vertical"></i></tr><br><br>
-    <tr><i class="fa-solid fa-volume-high vertical"></i></tr><br><br>
-    <tr><i class="fa-solid fa-user vertical"></i></tr><br><br>
-    <tr><i class="fa-solid fa-gear vertical"></i></tr><br><br>
-    <tr><i class="fa-solid fa-cloud vertical"></i></tr>
-  </navbar>
+  <section id="main">
+    <navbar>
+      <tr> <i class="fa-solid fa-bars vertical"></i></tr><br><br>
+      <tr></tr> <i class="fa-solid fa-house vertical"></i></tr><br><br>
+      <tr><i class="fa-solid fa-magnifying-glass vertical"></i></tr><br><br>
+      <tr><i class="fa-solid fa-volume-high vertical"></i></tr><br><br>
+      <tr><i class="fa-solid fa-user vertical"></i></tr><br><br>
+      <tr><i class="fa-solid fa-gear vertical"></i></tr><br><br>
+      <tr><i class="fa-solid fa-cloud vertical"></i></tr>
+    </navbar>
+    <section id="upper-main">
+      <span id="big-image-span">
+        <img id="big-image" src="https://vif1g.csb.app/src/assets/cattyboard.jpg"/>
+      </span>
+      <span id="upper-text">
+        <h2>CattyBoard Top 100 Single Charts (11.06.36)</h2>
+        <h5>Unknown Artist<br>2016.Charts.100 songs</h5>
+        <br>
+        <br>
+        <br>
+        <h5>
+            <i class="fa-solid fa-play"></i> Play All &emsp; 
+            <i class="fa-solid fa-plus"></i> Add To &emsp; 
+            <i class="fa-solid fa-ellipsis"></i> More
+        </h5>
+      </span>
+    </section>
+    <section id="lower-main">
+
+    </section>
+  </section>
 </body>
 </html>
