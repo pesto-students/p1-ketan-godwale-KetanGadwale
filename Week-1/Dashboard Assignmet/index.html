@@ -5,174 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/8c75bf0c13.js" crossorigin="anonymous"></script>
-  <style>
-    * {
-      padding: 0; 
-      margin: 0;
-    }
-    body {
-      font-family: 'lato';
-    }
-    #main::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    navbar {
-      display:inline-block;
-      vertical-align:top;
-      background-color: lightgray;
-      height: 85%;
-      padding: 15px 15px;
-    }
-    #upper-main {
-      display:inline-block;
-      background-color:rgb(65, 65, 65);
-      width: 97%;
-    }
-    #big-image-span {
-      display:inline-block;
-      vertical-align:top;
-    }
-    #big-image {
-      vertical-align: middle;
-      margin:20px 50px;
-      width: 200px;
-      height: 200px;
-    }
-    #upper-text {
-      padding-top: 25px;
-      display:inline-block;
-    }
-    h2, h5 {
-      color:rgb(255, 255, 255);
-    }
-    h2 {
-      padding-bottom: 10px;
-    }
-    h5 {
-      padding-bottom: 10px;
-    }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    td {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-    button {
-      background-color: transparent;
-      color: blue;
-    }
-    i.vertical {
-      position: relative;
-      /* Adjust these values accordingly */
-      padding-top: 10px;
-      padding-bottom: 40px;
-    }
-    i.hori {
-      padding-left: 220px;
-      padding-right: 0px;
-    }
-    button {
-      background-color: transparent;
-      color: blue;
-    }
-    footer {
-      background-color:rgb(80, 72, 188);
-    }
-    #small-image {
-      padding-top: 15px;
-      margin:10px;
-      width: 120px;
-      height: 120px;
-    }
-    #lower-text {
-      display:inline-block;
-      padding-bottom: 20px;
-    }
-    p {
-      color:rgb(255, 255, 255);
-    }
-  </style>
 </head>
 <body>
-  <section id="main">
-    <navbar>
-      <tr> <i class="fa-solid fa-bars vertical"></i></tr><br><br>
-      <tr></tr> <i class="fa-solid fa-house vertical"></i></tr><br><br>
-      <tr><i class="fa-solid fa-magnifying-glass vertical"></i></tr><br><br>
-      <tr><i class="fa-solid fa-volume-high vertical"></i></tr><br><br>
-      <tr><i class="fa-solid fa-user vertical"></i></tr><br><br>
-      <tr><i class="fa-solid fa-gear vertical"></i></tr><br><br>
-      <tr><i class="fa-solid fa-cloud vertical"></i></tr>
-    </navbar>
-    <section id="upper-main">
-      <span id="big-image-span">
-        <img id="big-image" src="https://vif1g.csb.app/src/assets/cattyboard.jpg"/>
-      </span>
-      <span id="upper-text">
-        <h2>CattyBoard Top 100 Single Charts (11.06.36)</h2>
-        <h5>Unknown Artist<br>2016.Charts.100 songs</h5>
-        <br>
-        <br>
-        <br>
-        <h5 style="padding-top:45px">
-            <i class="fa-solid fa-play"></i> Play All &emsp; 
-            <i class="fa-solid fa-plus"></i> Add To &emsp; 
-            <i class="fa-solid fa-ellipsis"></i> More
-        </h5>
-      </span>
-    
-      <table style="background-color: white;width:100%">
-        <tr>
-            <td style="height:50px;padding-right: 50px;">1.One Dance</td>
-            <td>cratefit</td>
-            <td>2:54</td>
-            <td><button>CATTY CLOUD SYNC</button></td>
-        </tr>
-        <tr>
-            <td style="height:50px;">1.One Dance</td>
-            <td>cratefit</td>
-            <td>2:54</td>
-            <td><button>CATTY CLOUD SYNC</button></td>
-        </tr>
-        <tr>
-            <td style="height:20px;">1.One Dance</td>
-            <td>cratefit</td>
-            <td>2:54</td>
-            <td><button>CATTY CLOUD SYNC</button></td>
-        </tr>
-        <tr>
-            <td style="height:50px;">1.One Dance</td>
-            <td>cratefit</td>
-            <td>2:54</td>
-            <td><button>CATTY CLOUD SYNC</button></td>
-        </tr>
-      </table>
-    </section>
-  </section>
-  <footer>
-    <span id="small-image-span">
-        <img id="small-image" src="https://vif1g.csb.app/src/assets/cattyboard.jpg">
-    </span>
-    <span id="lower-text">
-      <p>
-        <tr>
-        <span style="" class="footer"> If it aint love<br>caston derulo </span>
-        <span class ="ficon" style="padding-left: 500px;">
-          <i class="fa-solid fa-backward-step hori"></i>
-          <i class="fa-solid fa-pause hori"></i>
-          <i class="fa-solid fa-forward-step hori"></i>
-          <i class="fa-solid fa-rotate-right hori"></i>
-          <i class="fa-solid fa-shuffle hori"></i>
-        </span>
-        </tr>
-      </p>
-    </span>
-  </footer>
+  <nav>
+    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-house"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-volume-high"></i>
+    <i class="fa-solid fa-user"></i>
+    <i class="fa-solid fa-undo-alt"></i>
+    <i class="fa-solid fa-gear"></i>
+    <i class="fa-solid fa-cloud"></i>
+</nav>
 </body>
 </html>

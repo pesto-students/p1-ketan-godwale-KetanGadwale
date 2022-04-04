@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --lightgray-color: lightgray;
+  ---nav-height: 90vh;
+}
+
+body {
+  font-family: "lato", sans-serif;
+  line-height: 1.4;
+}
+
+nav {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: var(---nav-height);
+    background-color: var(--lightgray-color);
+    padding: 15px;
+    padding-top: 30px;
+  }
+  
+  nav > i {
+    flex: 1 1 10%;
+  }
