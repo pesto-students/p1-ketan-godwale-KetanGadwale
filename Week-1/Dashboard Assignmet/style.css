@@ -79,6 +79,32 @@ img {
   padding: 40px;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--footer-color);
+  align-items: center;
+}
+
+
+.small-image {
+  float: left;
+  height: 140px;
+  width: 140px;
+  padding: 15px;
+}
+
+
+span.bottom-panel {
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  height: 10vh;
+  align-items: center;
+  padding-right: 15px;
+}
+
 h5 > span {
   padding-right: 15px;
 }
