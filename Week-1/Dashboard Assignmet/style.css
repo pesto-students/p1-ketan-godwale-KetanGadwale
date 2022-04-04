@@ -8,7 +8,9 @@
 
 :root {
   --lightgray-color: lightgray;
-  ---nav-height: 90vh;
+  --footer-color: #4274bd;
+  --darkgray-color: #585858;
+  --main-section-height: 90vh;
 }
 
 body {
@@ -17,17 +19,94 @@ body {
 }
 
 nav {
-    float: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: var(---nav-height);
-    background-color: var(--lightgray-color);
-    padding: 15px;
-    padding-top: 30px;
-  }
-  
-  nav > i {
-    flex: 1 1 10%;
-  }
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: var(--main-section-height);
+  background-color: var(--lightgray-color);
+  padding: 15px;
+  padding-top: 30px;
+}
+
+nav > i {
+  flex: 1 1 10%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: var(--main-section-height);
+}
+
+main > *:nth-child(1) {
+  flex: 1 1 30%;
+}
+
+main > *:nth-child(2) {
+  flex: 1 1 70%;
+}
+
+.section-1 {
+  background-color: var(--darkgray-color);
+  color: white;
+}
+
+.section-2 {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.section-2 > p {
+  padding: 15px;
+  display: flex;
+}
+
+p > i {
+  flex-basis: 100%;
+}
+
+.section-2 > p:nth-child(even) {
+  background-color: var(--lightgray-color);
+}
+img {
+  max-width: 100%;
+}
+.main-image {
+  float: left;
+  padding: 40px;
+}
+
+h5 > span {
+  padding-right: 15px;
+}
+
+h2 {
+  padding-top: 40px;
+}
+
+h5 {
+  padding-top: 15px ;
+}
+
+h4 {
+  float: left;
+  padding-top: 40px;
+}
+
+i {
+  font-style: normal;
+}
+
+button {
+  color: blue;
+  padding: 5px;
+  border-color: black;
+  background: transparent;
+}
+
+
+
+
