@@ -1,4 +1,5 @@
 Product Mindset Assignment file name : Product Mindset (PRFAQ) Assignment.docx
-This is a word document.
+Design Thinking Assignment file name : Design Thinking Assignment.docx
+How web browser works file name : How Browser Works.docx
 
-Dashboard Assignmet folder contains dashboard code.
+Dashboard Assignmet folder contains dashboard code.(HTML Assignment)
