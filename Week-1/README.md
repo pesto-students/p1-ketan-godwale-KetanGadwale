@@ -7,7 +7,7 @@ Dashboard Assignmet folder contains dashboard code.(HTML Assignment)
 
 
 What happens when user enter the URL in the browser:
- ![image](https://user-images.githubusercontent.com/46350996/162481600-f326b078-538b-42d1-bfa7-32625e413e7b.png)
+![image](https://user-images.githubusercontent.com/46350996/162481600-f326b078-538b-42d1-bfa7-32625e413e7b.png)
  
 When user enter any URL in the browser, one of the main concepts of networking is used called DNS (Domain Name System) which lets you connect to the requested web page or a resource like an image by providing its IP address. As under the hood IP addresses are used for communication between client and server in TCP/IP which is common Internet communication protocol, browser cannot use example.com to communicate with the google servers. It must know the IP address of example.com before sending any request.
 Following steps will illustrate How DNS works:
@@ -23,7 +23,7 @@ Once the 8 steps of the DNS lookup have returned the IP address for example.com,
 9.	The browser makes a HTTP request to the IP address.
 10.	The server at that IP returns the webpage to be rendered in the browser.
 To save this hassle, modern web browser and operating systems uses DNS caching to store these DNS records locally which is checked before making a DNS query.
- ![image](https://user-images.githubusercontent.com/46350996/162481672-a50f3fe9-e70c-4426-86d9-8ff9bee0f349.png)
+![image](https://user-images.githubusercontent.com/46350996/162481672-a50f3fe9-e70c-4426-86d9-8ff9bee0f349.png)
 
 
 How does browser fetch the desired result:
@@ -58,14 +58,14 @@ Script Processing
 
 Javascript can be loaded in three ways
 HTML Parsing : default, stops rendering and load and executes script
- ![image](https://user-images.githubusercontent.com/46350996/162481746-c6f2af6b-8e54-473d-993b-3985f8c9c703.png)
+![image](https://user-images.githubusercontent.com/46350996/162481746-c6f2af6b-8e54-473d-993b-3985f8c9c703.png)
 
  
 Async : async, download along with html but while  executing it does not download html
 ![image](https://user-images.githubusercontent.com/46350996/162481757-bfb32695-66e1-4842-ac2d-ef3429ef8b51.png)
  
 Deferred : defer, same as async only executes the script after dom is loaded
- ![image](https://user-images.githubusercontent.com/46350996/162481767-63254886-9a26-476c-a89b-39282ad4b4c8.png)
+![image](https://user-images.githubusercontent.com/46350996/162481767-63254886-9a26-476c-a89b-39282ad4b4c8.png)
 
 
 
