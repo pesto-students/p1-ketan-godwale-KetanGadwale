@@ -13,6 +13,12 @@ main {
     height: 100vh;
 }
 
+h1 {
+    z-index: -1;
+    position: relative;
+    left: -11rem;
+}
+
 /* box styling */
 .box {
     height: 10rem;
