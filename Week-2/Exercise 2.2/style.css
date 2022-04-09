@@ -50,19 +50,19 @@ h1 {
 
 /* hovering effect */
 section:hover .box1 {
-    animation: box1 1s ease-in forwards;
+    animation: box1 1s ease-out forwards;
 }
 
 section:hover .box2 {
-    animation: box2 1s ease-in forwards;
+    animation: box2 1s ease-out forwards;
 }
 
 section:hover .box3 {
-    animation: box3 1s ease-in forwards;
+    animation: box3 1s ease-out forwards;
 }
 
 section:hover .box4 {
-    animation: box4 1s ease-in forwards;
+    animation: box4 1s ease-out forwards;
 }
 
 /* animation keyframes */
