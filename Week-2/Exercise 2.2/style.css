@@ -6,3 +6,30 @@
     padding: 0px;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    height: 10rem;
+    width: 10rem;
+}
+
+.box1 {
+    background-color: red;
+}
+
+.box2 {
+    background-color: yellow;
+}
+
+.box3 {
+    background-color: blue;
+}
+
+.box4 {
+    background-color: green;
+}
