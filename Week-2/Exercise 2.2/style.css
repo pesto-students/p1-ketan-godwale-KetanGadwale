@@ -6,11 +6,18 @@
     padding: 0px;
 }
 
+/* general styling */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -42,19 +49,19 @@ h1 {
 }
 
 /* hovering effect */
-main:hover .box1 {
+section:hover .box1 {
     animation: box1 1s ease-in forwards;
 }
 
-main:hover .box2 {
+section:hover .box2 {
     animation: box2 1s ease-in forwards;
 }
 
-main:hover .box3 {
+section:hover.box3 {
     animation: box3 1s ease-in forwards;
 }
 
-main:hover .box4 {
+section:hover.box4 {
     animation: box4 1s ease-in forwards;
 }
 
