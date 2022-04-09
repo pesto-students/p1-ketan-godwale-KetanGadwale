@@ -13,6 +13,7 @@ main {
     height: 100vh;
 }
 
+/* box styling */
 .box {
     height: 10rem;
     width: 10rem;
@@ -32,4 +33,18 @@ main {
 
 .box4 {
     background-color: green;
+}
+
+/* hovering effect */
+main:hover .box1 {
+    background-color: aliceblue;
+}
+
+main:hover .box2 {
+}
+
+main:hover .box3 {
+}
+
+main:hover .box4 {
 }
