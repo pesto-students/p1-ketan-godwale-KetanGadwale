@@ -57,11 +57,11 @@ section:hover .box2 {
     animation: box2 1s ease-in forwards;
 }
 
-section:hover.box3 {
+section:hover .box3 {
     animation: box3 1s ease-in forwards;
 }
 
-section:hover.box4 {
+section:hover .box4 {
     animation: box4 1s ease-in forwards;
 }
 
