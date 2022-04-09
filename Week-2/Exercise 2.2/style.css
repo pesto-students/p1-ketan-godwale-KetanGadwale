@@ -6,6 +6,11 @@
     padding: 0px;
 }
 
+:root {
+    --box-size: 10rem;
+    --box-rotation: 90deg;
+}
+
 /* general styling */
 main {
     display: flex;
@@ -23,13 +28,14 @@ section {
 h1 {
     z-index: -1;
     position: relative;
-    left: -11rem;
+    /* 11rem (box size + h1 font size / 2 ) */
+    left: calc((var(--box-size) + ( 1em / 2 )) * -1);
 }
 
 /* box styling */
 .box {
-    height: 10rem;
-    width: 10rem;
+    height: var(--box-size);
+    width: var(--box-size);
 }
 
 .box1 {
@@ -68,24 +74,24 @@ section:hover .box4 {
 /* animation keyframes */
 @keyframes box1 {
     100% {
-        transform: rotate(90deg) translateY(10rem);
+        transform: rotate(var(--box-rotation)) translateY(var(--box-size));
     }
 }
 
 @keyframes box2 {
     100% {
-        transform: rotate(-90deg) translateY(-10rem);
+        transform: rotate(calc(var(--box-rotation) * -1)) translateY(calc(var(--box-size) * -1));
     }
 }
 
 @keyframes box3 {
     100% {
-        transform: translateX(10rem) rotate(-90deg);
+        transform: translateX(var(--box-size)) rotate(calc(var(--box-rotation) * -1));
     }
 }
 
 @keyframes box4 {
     100% {
-        transform: translateX(10rem) rotate(90deg);
+        transform: translateX(var(--box-size)) rotate(var(--box-rotation));
     }
 }
