@@ -37,14 +37,34 @@ main {
 
 /* hovering effect */
 main:hover .box1 {
-    background-color: aliceblue;
+    animation: box1 1s ease-in;
 }
 
 main:hover .box2 {
+    
 }
 
 main:hover .box3 {
 }
 
 main:hover .box4 {
+}
+
+/* animation keyframes */
+@keyframes box1 {
+    100% {
+        transform: translateX(10rem) rotate(90deg);
+    }
+}
+
+@keyframes box2 {
+    
+}
+
+@keyframes box3 {
+    
+}
+
+@keyframes box4 {
+    
 }
