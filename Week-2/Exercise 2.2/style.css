@@ -28,7 +28,7 @@ section {
 h1 {
     z-index: -1;
     position: relative;
-    /* 11rem (box size + h1 font size / 2 ) */
+    /* 11rem (box size + font size / 2 ) */
     left: calc((var(--box-size) + ( 1em / 2 )) * -1);
 }
 
