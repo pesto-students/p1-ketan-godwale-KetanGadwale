@@ -6,7 +6,13 @@
     margin: 0px;
 }
 
+:root {
+    --primary-color: rgb(145, 234, 122);
+    --secondary-color: rgb(181, 232, 169);
+}
+
 body {
     height: 100vh;
     line-height: 1.6;
+    padding: 1em 1.5em;
 }
