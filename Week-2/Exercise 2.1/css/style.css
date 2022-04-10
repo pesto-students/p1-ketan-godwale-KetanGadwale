@@ -22,13 +22,25 @@ body {
 
 a {
     text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/hero-background.jpg);
+    background-size: cover;
+    /* background-position-x: 20%; */
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+
 }
 
 ul {
     list-style-type: none;
 }
-
-
 
 footer {
     padding: 2rem;
