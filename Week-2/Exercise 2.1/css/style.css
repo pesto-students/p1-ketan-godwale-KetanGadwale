@@ -12,6 +12,8 @@
 }
 
 body {
+    margin: 1em;
+    font-family: "Poppins", sans-serif;
     height: 100vh;
     line-height: 1.6;
     padding: 1em 1.5em;
