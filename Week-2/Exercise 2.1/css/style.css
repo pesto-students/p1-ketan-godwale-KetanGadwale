@@ -17,6 +17,7 @@ body {
     padding: 1em 1.5em;
 }
 
+
 a {
     text-decoration: none;
 }
@@ -25,9 +26,6 @@ ul {
     list-style-type: none;
 }
 
-header {
-    /* background-image: url(../images/background.jpg); */
-}
 
 
 footer {
