@@ -16,3 +16,35 @@ body {
     line-height: 1.6;
     padding: 1em 1.5em;
 }
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    /* background-image: url(../images/background.jpg); */
+}
+
+
+footer {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+footer>*:nth-child(1) {
+    display: inline-flex;
+    gap: 1.5rem;
+}
+
+footer>*:nth-child(2) {
+    display: inline-flex;
+    gap: 2rem;
+}
