@@ -42,6 +42,10 @@ nav {
     display: none;
 }
 
+nav a {
+    color: white;
+}
+
 /* hero section styling */
 .hero-img {
     position: absolute;
@@ -114,6 +118,10 @@ form {
     gap: 1rem;
 }
 
+input {
+    padding: .5em;
+}
+
 /*footer styling */
 footer {
     padding: 2rem;
@@ -135,4 +143,24 @@ footer>*:nth-child(2) {
 }
 
 /* media queries */
-@media only screen and (min-width: 680px) {}
+@media only screen and (min-width: 680px) {
+    body {
+        margin: 1.5em 3em;
+    }
+}
+
+@media only screen and (min-width: 875px) {
+    .menu {
+        display: none;
+    }
+
+    nav {
+        margin-top: -1em;
+        display: unset;
+    }
+
+    nav>ul {
+        display: flex;
+        gap: 3rem;
+    }
+}
