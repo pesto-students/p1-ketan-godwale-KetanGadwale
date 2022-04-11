@@ -26,6 +26,11 @@ a {
     font-size: 1.3rem;
 }
 
+input,
+button {
+    font: inherit;
+}
+
 /*header styling*/
 
 .menu {
@@ -115,7 +120,7 @@ article>a {
 }
 
 /* form styling */
-.form-section {
+section.form-section {
     margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -130,8 +135,20 @@ form {
     gap: 1rem;
 }
 
+section.form-section>p {
+    font-size: 1.3rem;
+}
+
 input {
     padding: .5em;
+}
+
+button {
+    background-color: var(--primary-color);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
 }
 
 /*footer styling */
@@ -152,6 +169,11 @@ footer>*:nth-child(1) {
 footer>*:nth-child(2) {
     display: inline-flex;
     gap: 2rem;
+}
+
+
+ul.footer-icon-links>li:hover {
+    color: var(--primary-color);
 }
 
 /* media queries */
@@ -193,7 +215,13 @@ footer>*:nth-child(2) {
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
+
+    .wrapper {
+        width: 1280px;
+        margin: 0 auto;
+    }
+
     .hero-img {
         height: 60vh
     }
