@@ -156,6 +156,15 @@ footer>*:nth-child(2) {
     body {
         margin: 1.5em 3em;
     }
+
+    .hero-img {
+        height: 90vh;
+    }
+
+    section.articles {
+        margin-top: -7.5rem;
+    }
+
 }
 
 @media only screen and (min-width: 875px) {
@@ -170,5 +179,13 @@ footer>*:nth-child(2) {
 
     .logo {
         font-size: 1.5rem;
+    }
+
+    .hero-img {
+        height: 80vh;
+    }
+
+    section.articles {
+        margin-top: -15rem;
     }
 }
