@@ -101,9 +101,21 @@ section.hero>h1 {
 }
 
 /* articles section styling */
+
+section.articles * {
+    padding: 0;
+    margin: 0;
+    margin-top: 0.7rem;
+}
+
 section.articles {
     margin-top: -8rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
 }
+
+article {}
 
 .title {
     font-weight: bold;
@@ -187,7 +199,7 @@ ul.footer-icon-links>li:hover {
     }
 
     section.articles {
-        margin-top: -9rem;
+        margin-top: -9em;
     }
 
 }
@@ -203,7 +215,7 @@ ul.footer-icon-links>li:hover {
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.5em;
     }
 
     .hero-img {
@@ -211,8 +223,10 @@ ul.footer-icon-links>li:hover {
     }
 
     section.articles {
-        margin-top: -19rem;
+        margin-top: -19em;
+        grid-template-columns: 1fr 1fr;
     }
+
 }
 
 @media only screen and (min-width: 1280px) {
@@ -228,6 +242,7 @@ ul.footer-icon-links>li:hover {
 
     section.articles {
         margin-top: -35rem;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
