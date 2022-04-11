@@ -57,6 +57,11 @@ nav {
 
 }
 
+section.hero {
+    color: white;
+    height: 90vh;
+}
+
 section.hero>h1 {
     font-size: 3rem;
     margin-top: 2em;
@@ -67,15 +72,28 @@ section.hero>h1 {
     font-size: 1.4rem;
 }
 
-section.hero {
-    color: white;
-    height: 90vh;
-}
-
-
 .logo {
     color: white;
     font-weight: bold;
+}
+
+/* articles section styling */
+section.articles {
+    margin-top: -1.5rem;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.desc {
+    line-height: 1.5rem;
+}
+
+article>a {
+    font-size: 1rem;
+    text-decoration: underline;
 }
 
 /*footer styling */
@@ -90,7 +108,7 @@ footer {
 
 footer>*:nth-child(1) {
     display: inline-flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 footer>*:nth-child(2) {
