@@ -46,6 +46,15 @@ nav a {
     color: white;
 }
 
+nav>ul {
+    display: flex;
+    gap: 3rem;
+}
+
+ul>li:hover {
+    text-decoration: underline;
+}
+
 /* hero section styling */
 .hero-img {
     position: absolute;
@@ -159,8 +168,7 @@ footer>*:nth-child(2) {
         display: unset;
     }
 
-    nav>ul {
-        display: flex;
-        gap: 3rem;
+    .logo {
+        font-size: 1.5rem;
     }
 }
