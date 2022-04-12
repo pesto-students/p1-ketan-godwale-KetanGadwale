@@ -21,7 +21,7 @@
 function createStack() {
     // Write your code here...
     const items = [];
-    return (function inner() {
+    return (function () {
         return {
             push(item) {
                 items.push(item);
