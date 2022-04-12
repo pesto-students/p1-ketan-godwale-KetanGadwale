@@ -1,21 +1,21 @@
-//Exercise 3.3 - What is the output of the below problem and why:
-//Code Snippet
-function createIncrement() {
-    let count = 0;
-    function increment() {
-        count++;
-    }
-    let message = `Count is ${count}`;
-    function log() {
-        console.log(message);
-    }
-    return [increment, log];
-}
-const [increment, log] = createIncrement();
-increment();
-increment();
-increment();
-log();
+//Exercise 3.3 - What is the output of the below problem and why: <br/>
+//Code Snippet <br/>
+function createIncrement() { <br/>
+    let count = 0; <br/>
+    function increment() { <br/>
+        count++; <br/>
+    } <br/>
+    let message = `Count is ${count}`; <br/>
+    function log() { <br/>
+        console.log(message); <br/>
+    } <br/>
+    return [increment, log]; <br/>
+} <br/>
+const [increment, log] = createIncrement(); <br/>
+increment(); <br/>
+increment(); <br/>
+increment(); <br/>
+log(); <br/>
 
 
 Output :-> Count is 0
