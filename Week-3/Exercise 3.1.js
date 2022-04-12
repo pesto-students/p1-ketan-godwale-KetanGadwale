@@ -21,8 +21,8 @@ const memoize = (fn) => {
 
 const memoizeAdd = memoize(add);
 
-console.log(memoizeAdd(100, 100));
-console.log(memoizeAdd(100));
-console.log(memoizeAdd(100, 200));
-console.log(memoizeAdd(100, 100));
-console.log(memoizeAdd(200, 100));
+console.log(memoizeAdd(100, 100)); // => 200
+console.log(memoizeAdd(100)); // => 100
+console.log(memoizeAdd(100, 200)); // => 300
+console.log(memoizeAdd(100, 100)); // => 200 - without computing
+console.log(memoizeAdd(200, 100)); // => 300 - without computing
