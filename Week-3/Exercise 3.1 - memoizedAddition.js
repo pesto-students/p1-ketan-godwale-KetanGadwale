@@ -1,3 +1,4 @@
+//Exercise 3.1 - memoize Addition
 function add(a = 0, b = 0) {
     return a + b;
 }
@@ -7,10 +8,10 @@ const memoize = (fn) => {
     const cache = {};
     return function (a, b) {
         if (((a + '+' + b) in cache) || ((b + '+' + a) in cache)) {
-            return (cache[a + '+' + b] + ' - used Memo');
+            return (cache[a + '+' + b] + ' - without computing');
         }
         else {
-            let result = add(a, b);
+            let result = fn(a, b);
             cache[a + '+' + b] = result;
             cache[b + '+' + a] = result;
             return result;

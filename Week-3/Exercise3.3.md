@@ -1,4 +1,4 @@
-
+//Exercise 3.3 - What is the output of the below problem and why:
 //Code Snippet
 function createIncrement() {
     let count = 0;
