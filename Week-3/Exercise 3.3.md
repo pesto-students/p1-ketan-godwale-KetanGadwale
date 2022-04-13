@@ -18,11 +18,10 @@ increment(); <br/>
 log(); <br/>
 
 
-Output :-> Count is 0
+ * Output :-> Count is 0 * 
 
 
-Explaination :->
-Ideally the value of 'count' should have been persisted and output should have got as 'Count is 3'
-Reason we did not get output as '3' is that 'increment' and 'log' functions should have invoked inside 'createIncrement' to make use of closure properly.
-
-As 'increment' is called in Global Execution Context(GEC) instead of in 'createIncrement' Function Execution Context(FEC), each time 'count' if referred with vlaue '0' even when function 'log' was invoked. Hence we finally got 'count' as 0.
+* Explaination :-> *
+Reason for output is 'message' variable is only set once with the initial value of 'count' as 0 when 'createIncrement' is invoked.
+After three 'increment' invocation, count is '3' but log is console-ing 'message' which is 'Count is 0'.
+Hence final output is 'Count is 0'.
