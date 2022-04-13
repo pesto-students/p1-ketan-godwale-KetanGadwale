@@ -1,6 +1,6 @@
 Exercise 3.3 - What is the output of the below problem and why: <br/>
 Code Snippet <br/>
-`function createIncrement() { <br/>
+function createIncrement() { <br/>
     let count = 0; <br/>
     function increment() { <br/>
         count++; <br/>
@@ -15,7 +15,7 @@ const [increment, log] = createIncrement(); <br/>
 increment(); <br/>
 increment(); <br/>
 increment(); <br/>
-log(); <br/>`
+log(); <br/>
 
 
 Output :-> Count is 0 
