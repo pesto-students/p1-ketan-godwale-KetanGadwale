@@ -7,7 +7,7 @@ function add(a = 0, b = 0) {
 const memoize = (fn) => {
     const cache = {};
     return function (a, b) {
-        if (((a + '+' + b) in cache) || ((b + '+' + a) in cache)) {
+        if (((a + '+' + b) in cache)) {
             return (cache[a + '+' + b] + ' - without computing');
         }
         else {
