@@ -20,5 +20,3 @@ git checkout -b week1
 - Raise a PR against master and add your mentor as reviewer
 - Resolve PR comments if any and once your mentor approves your PR, Merge it.
 
-
-ketan test 
