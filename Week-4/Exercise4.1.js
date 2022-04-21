@@ -6,3 +6,16 @@
 function getNumber() {
     return Math.floor(Math.random() * 1000);
 }
+
+
+function Promise(resolve, reject) {
+    let promise = { state: '<pending>' };
+    let num = getNumber();
+    if (num % 5 == 0) {
+        resolve();
+    }
+    else {
+        reject();
+    }
+}
+
