@@ -8,7 +8,7 @@ function getNumber() {
 }
 
 
-function Promise(resolve, reject) {
+function Promise() {
     let promise = { state: '<pending>' };
     let num = getNumber();
     if (num % 5 == 0) {
@@ -16,15 +16,17 @@ function Promise(resolve, reject) {
             state: '<fulfilled>',
             value: num
         };
-        resolve();
+
     }
     else {
         promise = {
             state: '<rejected>',
             reason: num
         };
-        reject();
     }
     return promise;
 }
 
+const promise = new Promise();
+
+console.log(promise);
