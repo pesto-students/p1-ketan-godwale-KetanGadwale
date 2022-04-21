@@ -3,7 +3,7 @@
 //prints out: [teacher's name] is now teaching [subject]
 
 
-function Person() { }
+function Person() { };
 
 Person.prototype.initialize = function (name, age) {
     this.name = name;
@@ -12,8 +12,10 @@ Person.prototype.initialize = function (name, age) {
 
 // TODO: create the class Teacher and a method teach
 
+function Teacher() { };
 
+Object.setPrototypeOf(Teacher.prototype, Person.prototype);
 
-var him = new Teacher();
+let him = new Teacher();
 him.initialize("Adam", 45);
 him.teach("Inheritance");
