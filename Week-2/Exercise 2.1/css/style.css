@@ -115,8 +115,6 @@ section.articles {
     grid-template-columns: 1fr;
 }
 
-article {}
-
 .title {
     font-weight: bold;
     font-size: 1.25rem;
