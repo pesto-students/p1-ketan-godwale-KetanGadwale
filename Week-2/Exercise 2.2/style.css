@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --box-size: 10rem;
+    --box-rotation: 90deg;
+}
+
+/* general styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    z-index: -1;
+    position: relative;
+    /* 11rem (box size + font size / 2 ) */
+    left: calc((var(--box-size) + ( 1em / 2 )) * -1);
+}
+
+/* box styling */
+.box {
+    height: var(--box-size);
+    width: var(--box-size);
+}
+
+.box1 {
+    background-color: red;
+}
+
+.box2 {
+    background-color: blue;
+}
+
+.box3 {
+    background-color: yellow;
+}
+
+.box4 {
+    background-color: green;
+}
+
+/* hovering effect */
+section:hover .box1 {
+    animation: box1 1s ease-out forwards;
+}
+
+section:hover .box2 {
+    animation: box2 1s ease-out forwards;
+}
+
+section:hover .box3 {
+    animation: box3 1s ease-out forwards;
+}
+
+section:hover .box4 {
+    animation: box4 1s ease-out forwards;
+}
+
+/* animation keyframes */
+@keyframes box1 {
+    100% {
+        transform: rotate(var(--box-rotation)) translateY(var(--box-size));
+    }
+}
+
+@keyframes box2 {
+    100% {
+        transform: rotate(calc(var(--box-rotation) * -1)) translateY(calc(var(--box-size) * -1));
+    }
+}
+
+@keyframes box3 {
+    100% {
+        transform: translateX(var(--box-size)) rotate(calc(var(--box-rotation) * -1));
+    }
+}
+
+@keyframes box4 {
+    100% {
+        transform: translateX(var(--box-size)) rotate(var(--box-rotation));
+    }
+}
