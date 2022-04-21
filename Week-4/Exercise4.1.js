@@ -12,10 +12,19 @@ function Promise(resolve, reject) {
     let promise = { state: '<pending>' };
     let num = getNumber();
     if (num % 5 == 0) {
+        promise = {
+            state: '<fulfilled>',
+            value: num
+        };
         resolve();
     }
     else {
+        promise = {
+            state: '<rejected>',
+            reason: num
+        };
         reject();
     }
+    return promise;
 }
 
