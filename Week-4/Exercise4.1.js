@@ -8,15 +8,15 @@ function getNumber() {
 }
 
 
-function Promise() {
+function Promise(resolve, reject) {
     let promise = { state: '<pending>' };
+
     let num = getNumber();
     if (num % 5 == 0) {
         promise = {
             state: '<fulfilled>',
             value: num
         };
-
     }
     else {
         promise = {
@@ -27,6 +27,13 @@ function Promise() {
     return promise;
 }
 
-const promise = new Promise();
 
+const resolveHandler = () => {
+
+}
+const rejectHandler = () => {
+
+}
+
+const promise = new Promise(resolveHandler, rejectHandler);
 console.log(promise);
