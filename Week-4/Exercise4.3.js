@@ -3,6 +3,9 @@
 const fibonacciSeriesIterator = {
     _first: 0,
     _second: 1,
+    //default length
+    _length: 10,
+    _runCount: 0,
     [Symbol.iterator]() {
         return this;
     },
@@ -10,15 +13,17 @@ const fibonacciSeriesIterator = {
         let temp = this._first;
         this._first = this._second;
         this._second = temp + this._first;
-        return { value: this._first, done: false }
+        return { value: this._first, done: !(this._runCount++ < this._length) }
+    },
+    //added to work with without infinite for _ of loop
+    setLength(len) {
+        this._length = len;
     }
 }
 
-console.log(fibonacciSeriesIterator.next().value)
-console.log(fibonacciSeriesIterator.next().value)
-console.log(fibonacciSeriesIterator.next().value)
-console.log(fibonacciSeriesIterator.next().value)
-console.log(fibonacciSeriesIterator.next().value)
-console.log(fibonacciSeriesIterator.next().value)
-console.log(fibonacciSeriesIterator.next().value)
-console.log(fibonacciSeriesIterator.next().value)
+//setting iterator length
+fibonacciSeriesIterator.setLength(15);
+
+for (let i of fibonacciSeriesIterator) {
+    console.log(i);
+}
