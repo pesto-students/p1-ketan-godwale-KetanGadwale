@@ -12,10 +12,17 @@ Person.prototype.initialize = function (name, age) {
 
 // TODO: create the class Teacher and a method teach
 
-function Teacher() { };
+function Teacher() {
+    this.subject = undefined;
+};
 
 Object.setPrototypeOf(Teacher.prototype, Person.prototype);
 
+Teacher.prototype.teach = function (subject) {
+    this.subject = subject;
+    return `${this.name} is now teaching ${this.subject}`
+}
+
 let him = new Teacher();
 him.initialize("Adam", 45);
-him.teach("Inheritance");
+console.log(him.teach("Inheritance"));
