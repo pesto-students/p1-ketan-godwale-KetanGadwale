@@ -10,29 +10,30 @@ function getNumber() {
 
 function Promise(resolve, reject) {
     let promise = { state: '<pending>' };
-
     let num = getNumber();
     if (num % 5 == 0) {
         promise = {
             state: '<fulfilled>',
             value: num
         };
+        resolve();
     }
     else {
         promise = {
             state: '<rejected>',
             reason: num
         };
+        reject();
     }
     return promise;
 }
 
 
 const resolveHandler = () => {
-
+    console.log('Promise was resolved!');
 }
 const rejectHandler = () => {
-
+    console.log('Promise was rejected!');
 }
 
 const promise = new Promise(resolveHandler, rejectHandler);
