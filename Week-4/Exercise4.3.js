@@ -15,7 +15,7 @@ const fibonacciSeriesIterator = {
         this._second = temp + this._first;
         return { value: this._first, done: !(this._runCount++ < this._length) }
     },
-    //added to work with without infinite for _ of loop
+    //added to work without infinite for _ of loop
     setLength(len) {
         this._length = len;
     }
