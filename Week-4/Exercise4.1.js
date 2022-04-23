@@ -7,6 +7,12 @@ function getNumber() {
     return Math.floor(Math.random() * 1000);
 }
 
+//states object
+const STATE = {
+    PENDING: '<pending>',
+    FULFILLED: '<fulfilled>',
+    REJECTED: '<rejected>'
+}
 
 //Promise polyfill
 function MyPromise(computationFn) {
@@ -17,15 +23,15 @@ function MyPromise(computationFn) {
     computationFn(
         //resolveHandler
         (value) => {
-            if (currentPromise.state == '<pending>') {
-                currentPromise.state = '<fulfilled>';
+            if (currentPromise.state == STATE.PENDING) {
+                currentPromise.state = STATE.FULFILLED;
                 currentPromise.value = value;
             }
         },
         //rejectHandler
         (reason) => {
-            if (currentPromise.state == '<pending>') {
-                currentPromise.state = '<rejected>';
+            if (currentPromise.state == STATE.PENDING) {
+                currentPromise.state = STATE.REJECTED;
                 currentPromise.reason = reason;
             }
         }
