@@ -17,7 +17,7 @@ const STATE = {
 //Promise polyfill
 function MyPromise(computationFn) {
     let currentPromise = {
-        state: '<pending>'
+        state: STATE.PENDING
     }
 
     computationFn(
@@ -33,6 +33,18 @@ function MyPromise(computationFn) {
             if (currentPromise.state == STATE.PENDING) {
                 currentPromise.state = STATE.REJECTED;
                 currentPromise.reason = reason;
+            }
+        }
+    );
+
+    //then
+    Object.defineProperty(currentPromise, 'then',
+        {
+            writable: false,
+            enumerable: false,
+            configurable: false,
+            value: function (successCallback) {
+
             }
         }
     );
