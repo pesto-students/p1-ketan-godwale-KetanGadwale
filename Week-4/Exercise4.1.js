@@ -10,7 +10,28 @@ function getNumber() {
 
 //Promise polyfill
 function MyPromise(computationFn) {
+    let currentPromise = {
+        state: '<pending>'
+    }
 
+    computationFn(
+        //resolveHandler
+        (value) => {
+            if (currentPromise.state == '<pending>') {
+                currentPromise.state = '<fulfilled>';
+                currentPromise.value = value;
+            }
+        },
+        //rejectHandler
+        (reason) => {
+            if (currentPromise.state == '<pending>') {
+                currentPromise.state = '<rejected>';
+                currentPromise.reason = reason;
+            }
+        }
+    );
+
+    return currentPromise;
 }
 
 
@@ -24,3 +45,4 @@ const promise = new MyPromise((resolve, reject) => {
         resolve(num);
 })
 
+console.log(promise);
