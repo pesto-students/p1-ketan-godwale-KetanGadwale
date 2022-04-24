@@ -66,18 +66,12 @@ function MyPromise(computationFn) {
 //main
 let num = getNumber();
 
-const promise = new MyPromise((resolve, reject) => {
+new MyPromise((resolve, reject) => {
     if (num % 5 == 0)
         reject(num);
     else
         resolve(num);
-})
-const thenPromise = promise.then(
-    (value) => console.log('then resolve', value),
-    (reason) => console.log('then reject', reason)
+}).then(
+    (value) => console.log(`Number ${value} NOT divisble by five - promise resolved!`),
+    (reason) => console.log(`Number ${reason} divisble by five - promise rejected!`)
 );
-
-// thenPromise.then((val) => console.log(val))
-
-console.log(promise);
-console.log(thenPromise);
