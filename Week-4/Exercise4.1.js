@@ -19,6 +19,7 @@ function MyPromise(computationFn) {
     let currentPromise = {
         state: STATE.PENDING
     }
+    let thenSuccessCallback, thenRejectCallback;
 
     computationFn(
         //resolveHandler
@@ -27,6 +28,9 @@ function MyPromise(computationFn) {
                 currentPromise.state = STATE.FULFILLED;
                 currentPromise.value = value;
             }
+            setTimeout(() => {
+                thenSuccessCallback && thenSuccessCallback(value);
+            });
         },
         //rejectHandler
         (reason) => {
@@ -34,6 +38,9 @@ function MyPromise(computationFn) {
                 currentPromise.state = STATE.REJECTED;
                 currentPromise.reason = reason;
             }
+            setTimeout(() => {
+                thenRejectCallback && thenRejectCallback(reason);
+            });
         }
     );
 
@@ -43,14 +50,17 @@ function MyPromise(computationFn) {
             writable: false,
             enumerable: false,
             configurable: false,
-            value: function (successCallback) {
-
+            value: function (successCallback, rejectCallback) {
+                thenSuccessCallback = successCallback;
+                thenRejectCallback = rejectCallback;
+                return new MyPromise((resolve, reject) => {
+                })
             }
         }
     );
-
     return currentPromise;
 }
+
 
 
 //main
@@ -62,5 +72,12 @@ const promise = new MyPromise((resolve, reject) => {
     else
         resolve(num);
 })
+const thenPromise = promise.then(
+    (value) => console.log('then resolve', value),
+    (reason) => console.log('then reject', reason)
+);
+
+// thenPromise.then((val) => console.log(val))
 
 console.log(promise);
+console.log(thenPromise);
