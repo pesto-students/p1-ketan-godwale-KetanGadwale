@@ -53,7 +53,22 @@ function MyPromise(computationFn) {
             thenSuccessCallback = successCallback;
             thenRejectCallback = rejectCallback;
             return new MyPromise((resolve, reject) => {
-                resolve(currentPromise.value || currentPromise.reason);
+                currentPromise.value && resolve(currentPromise.value);
+                currentPromise.reason && reject(currentPromise.reason);
+            });
+        },
+    });
+
+    //catch : this is similar to then with only rejectCallback and runs when promise is rejected
+    Object.defineProperty(currentPromise, "catch", {
+        writable: false,
+        enumerable: false,
+        configurable: false,
+        value: function (rejectCallback) {
+            thenRejectCallback = rejectCallback;
+            return new MyPromise((resolve, reject) => {
+                currentPromise.value && resolve(currentPromise.value);
+                currentPromise.reason && reject(currentPromise.reason);
             });
         },
     });
@@ -77,7 +92,9 @@ const promise = new MyPromise((resolve, reject) => {
                 `Number ${reason} divisible by five - promise rejected!`
             )
     )
-    .then((value) => console.log("settled!!! with", value))
-    .then(() => console.log("then - 3rd"));
+    .then((data) => console.log("settled!!! with", data))
+    .then(() => console.log("when rejected - should not be printed"))
+    .catch((err) => console.log("error - rejected due to", err))
+    .then(() => console.log("then after catch"));
 
 console.log(promise);
