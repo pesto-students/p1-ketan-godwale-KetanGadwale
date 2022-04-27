@@ -52,7 +52,9 @@ function MyPromise(computationFn) {
         value: function (successCallback, rejectCallback) {
             thenSuccessCallback = successCallback;
             thenRejectCallback = rejectCallback;
-            return new MyPromise((resolve, reject) => {});
+            return new MyPromise((resolve, reject) => {
+                resolve(currentPromise.value || currentPromise.reason);
+            });
         },
     });
     return currentPromise;
@@ -61,14 +63,21 @@ function MyPromise(computationFn) {
 //main
 let num = getNumber();
 
-new MyPromise((resolve, reject) => {
+const promise = new MyPromise((resolve, reject) => {
     if (num % 5 == 0) reject(num);
     else resolve(num);
-}).then(
-    (value) =>
-        console.log(
-            `Number ${value} NOT divisible by five - promise resolved!`
-        ),
-    (reason) =>
-        console.log(`Number ${reason} divisible by five - promise rejected!`)
-);
+})
+    .then(
+        (value) =>
+            console.log(
+                `Number ${value} NOT divisible by five - promise resolved!`
+            ),
+        (reason) =>
+            console.log(
+                `Number ${reason} divisible by five - promise rejected!`
+            )
+    )
+    .then((value) => console.log("settled!!! with", value))
+    .then(() => console.log("then - 3rd"));
+
+console.log(promise);
