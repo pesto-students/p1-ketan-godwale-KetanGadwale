@@ -72,6 +72,21 @@ function MyPromise(computationFn) {
             });
         },
     });
+
+    //finally : similar to catch but both thenSuccessCallback and thenRejectCallback set to finallyCallback
+    Object.defineProperty(currentPromise, "finally", {
+        writable: false,
+        enumerable: false,
+        configurable: false,
+        value: function (finallyCallback) {
+            thenSuccessCallback = finallyCallback;
+            thenRejectCallback = finallyCallback;
+            return new MyPromise((resolve, reject) => {
+                currentPromise.value && resolve(currentPromise.value);
+                currentPromise.reason && reject(currentPromise.reason);
+            });
+        },
+    });
     return currentPromise;
 }
 
@@ -95,6 +110,7 @@ const promise = new MyPromise((resolve, reject) => {
     .then((data) => console.log("settled!!! with", data))
     .then(() => console.log("when rejected - should not be printed"))
     .catch((err) => console.log("error - rejected due to", err))
-    .then(() => console.log("then after catch"));
+    .then(() => console.log("then after catch"))
+    .finally(() => console.log("finally!"));
 
 console.log(promise);
