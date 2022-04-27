@@ -1,5 +1,5 @@
 //Implement a function named getNumber which generates a random number.
-//If randomNumber is divisible by 5 it will reject the promise else it will resolve the promise. 
+//If randomNumber is divisible by 5 it will reject the promise else it will resolve the promise.
 //Let’s also keep the promise resolution/rejection time as a variable.
 
 //get Random number between 1 to 1000
@@ -9,16 +9,16 @@ function getNumber() {
 
 //states object
 const STATE = {
-    PENDING: '<pending>',
-    FULFILLED: '<fulfilled>',
-    REJECTED: '<rejected>'
-}
+    PENDING: "<pending>",
+    FULFILLED: "<fulfilled>",
+    REJECTED: "<rejected>",
+};
 
 //Promise polyfill
 function MyPromise(computationFn) {
     let currentPromise = {
-        state: STATE.PENDING
-    }
+        state: STATE.PENDING,
+    };
     let thenSuccessCallback, thenRejectCallback;
 
     computationFn(
@@ -45,33 +45,30 @@ function MyPromise(computationFn) {
     );
 
     //then
-    Object.defineProperty(currentPromise, 'then',
-        {
-            writable: false,
-            enumerable: false,
-            configurable: false,
-            value: function (successCallback, rejectCallback) {
-                thenSuccessCallback = successCallback;
-                thenRejectCallback = rejectCallback;
-                return new MyPromise((resolve, reject) => {
-                })
-            }
-        }
-    );
+    Object.defineProperty(currentPromise, "then", {
+        writable: false,
+        enumerable: false,
+        configurable: false,
+        value: function (successCallback, rejectCallback) {
+            thenSuccessCallback = successCallback;
+            thenRejectCallback = rejectCallback;
+            return new MyPromise((resolve, reject) => {});
+        },
+    });
     return currentPromise;
 }
-
-
 
 //main
 let num = getNumber();
 
 new MyPromise((resolve, reject) => {
-    if (num % 5 == 0)
-        reject(num);
-    else
-        resolve(num);
+    if (num % 5 == 0) reject(num);
+    else resolve(num);
 }).then(
-    (value) => console.log(`Number ${value} NOT divisble by five - promise resolved!`),
-    (reason) => console.log(`Number ${reason} divisble by five - promise rejected!`)
+    (value) =>
+        console.log(
+            `Number ${value} NOT divisible by five - promise resolved!`
+        ),
+    (reason) =>
+        console.log(`Number ${reason} divisible by five - promise rejected!`)
 );
