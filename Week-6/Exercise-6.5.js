@@ -1,3 +1,5 @@
+//returns 1 if has a pair with given difference else returns 0
+
 function hasPairWithDiff(arr, diff) {
     let _temp = new Set();
     for (let i of arr) {
