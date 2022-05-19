@@ -6,7 +6,7 @@ class Node {
 }
 
 class LinkedList {
-    constructor(head) {
+    constructor() {
         this.head = null;
     }
 
@@ -16,9 +16,10 @@ class LinkedList {
             this.head = newNode;
             return;
         }
-
         let temp = this.head;
-        while (temp.next != null) temp = temp.next;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
 
         temp.next = newNode;
     }
@@ -33,17 +34,20 @@ class LinkedList {
         process.stdout.write('\n');
     }
 
-    reverse() {
-        let previous = null;
-        let current = this.head;
-        let next = null;
-        while (current != null) {
-            next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+    rotate(n) {
+        let i = 0;
+        let arr = [];
+        let temp = this.head;
+
+        while (i < n && temp.next != null) {
+            arr.push(temp.data);
+            temp = temp.next;
+            i++;
         }
-        this.head = previous;
+        this.head = temp;
+        for (let i = 0; i < arr.length; i++) {
+            this.add(arr[i]);
+        }
     }
 }
 
@@ -58,6 +62,6 @@ linkedList.add(6);
 
 linkedList.print();
 
-linkedList.reverse();
+linkedList.rotate(2);
 
 linkedList.print();
