@@ -3,13 +3,18 @@ function spiral2DArray(arr, i, j, r, c) {
     //indices are out of bound then return result
     if (i >= r || j >= c) return result;
 
-    //prints first row
+    //print first row
     for (let k = j; k < c; k++) {
         result.push(arr[i][k]);
     }
 
-    for(let k =i + 1; )
+    //print last column
+    for (let k = i + 1; k < r; k++) {
+        result.push(arr[k][c - 1]);
+    }
 
+    //for testing
+    console.log(result);
 }
 
 let arr = [
