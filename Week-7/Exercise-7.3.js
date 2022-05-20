@@ -49,7 +49,16 @@ class LinkedList {
         temp.next = xthNode;
     }
 
-    detectLoop() {}
+    detectLoop() {
+        let set = new Set();
+        let temp = this.head;
+        while (temp != null) {
+            if (set.has(temp)) return true;
+            set.add(temp);
+            temp = temp.next;
+        }
+        return false;
+    }
 }
 
 let linkedList = new LinkedList();
@@ -63,6 +72,6 @@ linkedList.add(6);
 
 linkedList.print();
 
-linkedList.addLoop(0);
+// linkedList.addLoop(0);
 
-linkedList.print();
+console.log(linkedList.detectLoop());
