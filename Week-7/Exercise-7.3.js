@@ -50,15 +50,29 @@ class LinkedList {
     }
 
     detectLoop() {
-        let set = new Set();
-        let temp = this.head;
-        while (temp != null) {
-            if (set.has(temp)) return true;
-            set.add(temp);
-            temp = temp.next;
+        let p1 = this.head;
+        let p2 = this.head;
+
+        while (p1 != null && p2 != null && p2.next != null) {
+            p1 = p1.next;
+            p2 = p2.next.next;
+            if (p1 == p2) {
+                return true;
+            }
         }
         return false;
     }
+
+    // detectLoop() {
+    //     let set = new Set();
+    //     let temp = this.head;
+    //     while (temp != null) {
+    //         if (set.has(temp)) return true;
+    //         set.add(temp);
+    //         temp = temp.next;
+    //     }
+    //     return false;
+    // }
 }
 
 let linkedList = new LinkedList();
@@ -72,6 +86,6 @@ linkedList.add(6);
 
 linkedList.print();
 
-// linkedList.addLoop(0);
+linkedList.addLoop(4);
 
 console.log(linkedList.detectLoop());
