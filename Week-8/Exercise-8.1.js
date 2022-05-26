@@ -14,6 +14,7 @@ class BinaryTree {
 
     addRoot(val) {
         this.root = new Node(val);
+        return this.root;
     }
 
     add(val) {
@@ -23,28 +24,39 @@ class BinaryTree {
             if (val < temp.value) {
                 if (temp.left == null) {
                     temp.left = newNode;
-                    return;
+                    return newNode;
                 }
                 temp = temp.left;
             } else {
                 if (temp.right == null) {
                     temp.right = newNode;
-                    return;
+                    return newNode;
                 }
                 temp = temp.right;
             }
         }
     }
 
-    maxDepth() {}
+    static maxDepth(node) {
+        if (node == null) return -1;
+        else {
+            let leftDepth = BinaryTree.maxDepth(node.left);
+            let rightDepth = BinaryTree.maxDepth(node.right);
+
+            if (leftDepth > rightDepth) return leftDepth + 1;
+            return rightDepth + 1;
+        }
+    }
 }
 
 const bTree = new BinaryTree();
 
-bTree.addRoot(14);
+let root = bTree.addRoot(14);
 
 bTree.add(8);
 bTree.add(27);
 bTree.add(3);
 bTree.add(12);
-console.log(bTree);
+// console.log(bTree);
+
+console.log(BinaryTree.maxDepth(root));
