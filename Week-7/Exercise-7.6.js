@@ -6,20 +6,9 @@ class Queue {
         this.rearStack = [];
     }
 
-    enQueue(item) {
-        this.rearStack.push(item);
-        return true;
-    }
+    enQueue(item) {}
 
-    deQueue(item) {
-        if (this.frontStack.length == 0) {
-            this.frontStack = this.rearStack;
-            this.rearStack = [];
-        }
-        let result = this.frontStack[0];
-        delete this.frontStack[0];
-        return result;
-    }
+    deQueue(item) {}
 
     print() {
         console.log([...this.frontStack, ...this.rearStack]);
