@@ -38,20 +38,7 @@ class Tree {
         }
     }
 
-    static isBinaryTree(node) {
-        let prev = null;
-        if (node != null) {
-            if (!Tree.isBinaryTree(node.left)) {
-                return false;
-            }
-            if (prev != null && node.value <= prev.value) {
-                return false;
-            }
-            prev = node;
-            return Tree.isBinaryTree(node.right);
-        }
-        return true;
-    }
+    static isBinaryTree(node) {}
 }
 
 let tree = new Tree();
@@ -59,7 +46,9 @@ let tree = new Tree();
 let root = tree.addRoot(5);
 tree.addNode(1);
 tree.addNode(6);
-// tree.addNode(4);
+tree.addNode(4);
 tree.addNode(0);
+
+console.log(tree);
 
 console.log(Tree.isBinaryTree(root));
