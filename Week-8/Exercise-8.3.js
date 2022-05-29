@@ -18,17 +18,17 @@ class Tree {
     }
 
     addNode(val) {
-        let node = this.root;
+        let temp = this.root;
         let newNode = new Node(val);
         while (true) {
             if (val < temp.value) {
-                if (temp.left != null) {
+                if (temp.left == null) {
                     temp.left = newNode;
                     return newNode;
                 }
                 temp = temp.left;
             } else {
-                if (temp.right != null) {
+                if (temp.right == null) {
                     temp.right = newNode;
                     return newNode;
                 }
@@ -36,4 +36,28 @@ class Tree {
             }
         }
     }
+
+    printLevelOrder() {
+        let queue = [];
+        queue.push(this.root);
+        while (queue.length != 0) {
+            let temp = queue.shift();
+            process.stdout.write(`${temp.value} `);
+            if (temp.left != null) {
+                queue.push(temp.left);
+            }
+            if (temp.right != null) {
+                queue.push(temp.right);
+            }
+        }
+    }
 }
+let tree = new Tree();
+
+let root = tree.addRoot(5);
+tree.addNode(1);
+tree.addNode(6);
+tree.addNode(4);
+tree.addNode(0);
+
+tree.printLevelOrder();
