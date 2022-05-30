@@ -2,14 +2,12 @@
 
 class TownGraph {
     constructor(n) {
-        this.trustMatrix = new Array(n);
-        for (let i = 0; i < n; i++) {
-            this.trustMatrix[i] = [];
-        }
+        this.trustMatrix = [];
+        this.size = n;
     }
 
     addTrust(v, w) {
-        this.trustMatrix[v - 1].push(w - 1);
+        this.trustMatrix.push([v, w]);
     }
 
     printTrustMatrix() {
@@ -17,31 +15,21 @@ class TownGraph {
     }
 
     findTownJudge() {
-        let checkList = [];
-        let n = this.trustMatrix.length;
-        for (let i = 0; i < n; i++) {
-            if (this.trustMatrix[i].length == 0) {
-                checkList.push(i);
-            }
-        }
-        if (checkList.length > 0) {
-            while (checkList.length != 0) {
-                let contender = checkList.shift();
-                if (this.whetherAllTrust(contender + 1)) {
-                    return contender + 1;
-                }
-            }
-        } else return -1;
-    }
-
-    whetherAllTrust(j) {
+        let n = this.size;
+        let trust = new Array(n).fill(0);
+        let trusted = new Array(n).fill(0);
         for (let i = 0; i < this.trustMatrix.length; i++) {
-            if ((i = j - 1)) continue;
-            if (i.includes(j)) {
-                return false;
+            let a = this.trustMatrix[i][0];
+            let b = this.trustMatrix[i][1];
+            trust[a - 1]++;
+            trusted[b - 1]++;
+        }
+        for (let i = 0; i < n; i++) {
+            if (trust[i] == 0 && trusted[i] == n - 1) {
+                return i + 1;
             }
         }
-        return true;
+        return -1;
     }
 }
 
