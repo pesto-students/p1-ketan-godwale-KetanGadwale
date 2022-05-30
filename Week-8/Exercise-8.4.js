@@ -10,8 +10,10 @@ class Graph {
         this.#visited = new Array(n).fill(0);
     }
 
+    //bi-directional edges
     addEdge(v, w) {
         this.adjMatrix[v].push(w);
+        this.adjMatrix[w].push(v);
     }
 
     printAdjMatrix() {
