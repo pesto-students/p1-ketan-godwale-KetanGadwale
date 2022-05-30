@@ -43,11 +43,11 @@ class Tree {
 
 let tree = new Tree();
 
-let root = tree.addRoot(5);
-tree.addNode(1);
-tree.addNode(6);
-tree.addNode(4);
-tree.addNode(0);
+let root = tree.addRoot(15);
+tree.addNode(12);
+// tree.addNode(6);
+// tree.addNode(4);
+// tree.addNode(0);
 
 console.log(tree);
 
