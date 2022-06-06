@@ -21,7 +21,16 @@ function App() {
         setTodos(newTodos);
     };
 
-    const markTodo = (id) => {};
+    const markTodo = (id) => {
+        let name = '';
+        let newTodos = [...todos].map((todo) => {
+            if (todo.id === id) {
+                todo.completed = !todo.completed;
+            }
+            return todo;
+        });
+        setTodos(newTodos);
+    };
 
     return (
         <div className='App'>
