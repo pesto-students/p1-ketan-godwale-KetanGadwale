@@ -14,15 +14,25 @@ function App() {
         let todo = { id: id, name: input, completed: false };
         let newTodos = [todo, ...todos];
         setTodos(newTodos);
-        console.log(newTodos);
     };
+
+    const removeTodo = (id) => {
+        let newTodos = [...todos].filter((todo) => todo.id !== id);
+        setTodos(newTodos);
+    };
+
+    const markTodo = (id) => {};
 
     return (
         <div className='App'>
             <h1>Todo List</h1>
             <TodoForm addTodo={addTodo} />
             {todos.map((todo) => (
-                <TodoItem todo={todo} />
+                <TodoItem
+                    todo={todo}
+                    removeTodo={removeTodo}
+                    markTodo={markTodo}
+                />
             ))}
         </div>
     );
