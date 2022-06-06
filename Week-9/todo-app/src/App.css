@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    width: 60%;
+    width: 90%;
     min-height: 768px;
     background: white;
     text-align: center;
@@ -87,4 +87,22 @@ h1 {
 
 .completed {
     text-decoration: line-through;
+}
+
+@media only screen and (min-width: 680px) {
+    .App {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .App {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .App {
+        width: 768px;
+    }
 }
