@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoItem from './components/TodoItem';
 
 function App() {
-    const [todos, setTodos] = useState([]);
+    const initialState = JSON.parse(localStorage.getItem('todos')) || [];
+    const [todos, setTodos] = useState(initialState);
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
 
     const addTodo = (input) => {
-        if (input == '') return;
+        if (input === '') return;
         let id = 1;
         if (todos.length > 0) {
             id = todos[0].id + 1;
@@ -23,7 +28,6 @@ function App() {
     };
 
     const markTodo = (id) => {
-        let name = '';
         let newTodos = [...todos].map((todo) => {
             if (todo.id === id) {
                 todo.completed = !todo.completed;
