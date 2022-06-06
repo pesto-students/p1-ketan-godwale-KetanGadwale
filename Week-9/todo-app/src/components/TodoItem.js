@@ -8,8 +8,14 @@ export default function TodoItem({ todo, removeTodo, markTodo }) {
             className={todo.completed ? 'todo-item completed' : 'todo-item'}
         >
             {todo.name}
-            <FiDelete className='icon' onClick={() => removeTodo(todo.id)} />
-            <FiCheck className='icon' onClick={() => markTodo(todo.id)} />
+            <div className='icon-container'>
+                <FiDelete
+                    className='icon'
+                    onClick={() => removeTodo(todo.id)}
+                    style={{ marginRight: '1rem' }}
+                />
+                <FiCheck className='icon' onClick={() => markTodo(todo.id)} />
+            </div>
         </div>
     );
 }

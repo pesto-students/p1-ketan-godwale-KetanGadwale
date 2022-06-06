@@ -12,6 +12,7 @@ body {
         rgb(160, 230, 128) 0%,
         rgb(97, 195, 140) 100%
     );
+    font-size: 1.3rem;
 }
 
 .App {
@@ -19,35 +20,36 @@ body {
     flex-direction: column;
     justify-content: start;
     width: 60%;
-    min-height: 600px;
+    min-height: 768px;
     background: white;
     text-align: center;
-    margin: 128px auto;
-    border-radius: 10px;
-    padding-bottom: 32px;
+    margin: 10rem auto;
+    border-radius: 1rem;
+    padding-bottom: 2rem;
 }
 
 h1 {
-    margin: 32px 0;
-    font-size: 33px;
+    margin: 2.5rem 0;
+    font-size: 2.5rem;
 }
 
 .todo-form {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 }
 
 .todo-input {
-    padding: 14px 32px 14px 16px;
-    border-radius: 4px 0 0 4px;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.5rem 0 0 0.5rem;
     border: 2px solid rgb(93, 221, 106);
     outline: none;
-    width: 320px;
+    width: 20rem;
+    font-size: 1.3rem;
 }
 
 .todo-button {
-    padding: 16px;
+    padding: 1rem;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 0.5rem 0.5rem 0;
     cursor: pointer;
     outline: none;
     background: linear-gradient(
@@ -57,6 +59,30 @@ h1 {
     );
     color: white;
     text-transform: capitalize;
+    font-size: 1.3rem;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px auto;
+    color: white;
+    background: linear-gradient(
+        90deg,
+        rgb(160, 230, 128) 0%,
+        rgb(97, 195, 140) 100%
+    );
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .completed {

@@ -7,6 +7,7 @@ function App() {
     const [todos, setTodos] = useState([]);
 
     const addTodo = (input) => {
+        if (input == '') return;
         let id = 1;
         if (todos.length > 0) {
             id = todos[0].id + 1;
