@@ -50,6 +50,7 @@ class Tree {
                 queue.push(temp.right);
             }
         }
+        process.stdout.write('\n');
     }
 }
 let tree = new Tree();
