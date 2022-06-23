@@ -13,42 +13,34 @@ class Tree {
         this.root = null;
     }
 
-    addRoot(val) {
-        this.root = new Node(val);
-        return this.root;
-    }
+    static isValidBST(root) {
+        //in-order traversal should be an sorted array for the tree to be a valid BST
+        let arr = [];
 
-    addNode(val) {
-        let temp = this.root;
-        let newNode = new Node(val);
-        while (true) {
-            if (val < temp.value) {
-                if (temp.left == null) {
-                    temp.left = newNode;
-                    return newNode;
-                }
-                temp = temp.left;
-            } else {
-                if (temp.right == null) {
-                    temp.right = newNode;
-                    return newNode;
-                }
-                temp = temp.right;
+        const inorder = (root) => {
+            if (root != null) {
+                inorder(root.left);
+                arr.push(root.value);
+                inorder(root.right);
             }
-        }
-    }
+        };
 
-    static isBinaryTree(node) {}
+        const isSorted = (arr) => {
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i + 1]) return false;
+            }
+            return true;
+        };
+
+        inorder(root);
+        return isSorted(arr);
+    }
 }
 
 let tree = new Tree();
 
-let root = tree.addRoot(15);
-tree.addNode(12);
-// tree.addNode(6);
-// tree.addNode(4);
-// tree.addNode(0);
+let root = new Node(12);
+root.left = new Node(13);
+root.right = new Node(18);
 
-console.log(tree);
-
-console.log(Tree.isBinaryTree(root));
+console.log(Tree.isValidBST(root));
