@@ -1,5 +1,10 @@
+import Form from '../components/Form';
 function Home() {
-    return <div>Home</div>;
+    return (
+        <div>
+            <Form />
+        </div>
+    );
 }
 
 export default Home;

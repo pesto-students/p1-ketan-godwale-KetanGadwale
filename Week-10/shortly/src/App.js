@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import Navigation from './routes/Navigation';
 import './App.css';
@@ -10,10 +10,13 @@ function App() {
             <Routes>
                 <Route path='/' element={<Navigation />}>
                     <Route index element={<Home />} />
+                    {/* <Route path='feature' element={<Feature />} />
+                    <Route path='pricing' element={<Pricing />} />
+                    <Route path='resource1' element={<Resource1 />} />
+                    <Route path='resource2' element={<Resource2 />} />
+                    <Route path='resource3' element={<Resource3 />} /> */}
                 </Route>
             </Routes>
-            <h1>Shortly</h1>
-            <Form />
         </div>
     );
 }
