@@ -7,39 +7,57 @@ function Navigation() {
             <div>
                 <Container>
                     <Navbar expand='lg'>
-                        <Navbar.Brand
-                            href='#home'
-                            style={{ color: 'darkorange' }}
-                        >
-                            Shortly
-                        </Navbar.Brand>
+                        <Link to=''>
+                            <Navbar.Brand
+                                href='#home'
+                                style={{ color: 'darkorange' }}
+                            >
+                                Shortly
+                            </Navbar.Brand>
+                        </Link>
                         <Navbar.Toggle aria-controls='basic-navbar-nav' />
                         <Navbar.Collapse id='basic-navbar-nav'>
                             <Nav className='me-auto'>
-                                <Nav.Link href='#home'>Feature</Nav.Link>
-                                <Nav.Link href='#link'>Pricing</Nav.Link>
+                                <Link to='/feature'>
+                                    <Nav.Link href='#home'>Feature</Nav.Link>
+                                </Link>
+                                <Link to='/pricing'>
+                                    <Nav.Link href='#link'>Pricing</Nav.Link>
+                                </Link>
                                 <NavDropdown
                                     title='Resources'
                                     id='basic-nav-dropdown'
                                 >
-                                    <NavDropdown.Item href='#action/3.1'>
-                                        Resource 1
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href='#action/3.2'>
-                                        Resource 2
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href='#action/3.3'>
-                                        Resource 3
-                                    </NavDropdown.Item>
+                                    <Link to='/resource1'>
+                                        <NavDropdown.Item href='#action/3.1'>
+                                            Resource 1
+                                        </NavDropdown.Item>
+                                    </Link>
+                                    <Link to='/resource2'>
+                                        <NavDropdown.Item href='#action/3.2'>
+                                            Resource 2
+                                        </NavDropdown.Item>
+                                    </Link>
+                                    <Link to='/resource3'>
+                                        <NavDropdown.Item href='#action/3.3'>
+                                            Resource 3
+                                        </NavDropdown.Item>
+                                    </Link>
                                 </NavDropdown>
                             </Nav>
                             <Nav>
-                                <Nav.Link href='#home'>Login</Nav.Link>
-                                <Nav.Link href='#link'>SignUp</Nav.Link>
+                                <Link to='/login'>
+                                    <Nav.Link href='#home'>Login</Nav.Link>
+                                </Link>
+                                <Link to='signup'>
+                                    <Nav.Link href='#home'>SignUp</Nav.Link>
+                                </Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
-                    <Outlet className='outlet' />
+                    <div className='Outlet'>
+                        <Outlet />
+                    </div>
                 </Container>
             </div>
         </>
