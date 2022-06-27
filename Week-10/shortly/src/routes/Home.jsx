@@ -1,4 +1,4 @@
-import Form from '../components/Form';
+import Main from '../components/Main';
 function Home() {
     return (
         <div>
@@ -7,7 +7,7 @@ function Home() {
                 A URL shortener built with powerful tools to help you grow and
                 protect your brand.
             </span>
-            <Form />
+            <Main />
         </div>
     );
 }
