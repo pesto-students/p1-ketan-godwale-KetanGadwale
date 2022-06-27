@@ -3,8 +3,9 @@ import Form from './Form';
 import List from './List';
 
 function Main() {
+    const initialState = JSON.parse(localStorage.getItem('list')) || [];
     const [url, setUrl] = useState('');
-    const [list, setList] = useState([]);
+    const [list, setList] = useState(initialState);
 
     return (
         <div className='Main'>

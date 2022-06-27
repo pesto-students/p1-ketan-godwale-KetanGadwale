@@ -33,6 +33,7 @@ export default function Form({ url, setUrl, list, setList }) {
 
     useEffect(() => {
         list[0] && setUrl(list[0].short_link);
+        localStorage.setItem('list', JSON.stringify(list));
     }, [list]);
 
     return (
