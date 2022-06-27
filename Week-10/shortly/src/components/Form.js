@@ -56,7 +56,7 @@ export default function Form({ url, setUrl, list, setList }) {
                     Service, Privacy Policy, and Acceptable Use Policy
                 </FormBS.Text>
             </FormBS>
-            {error != '' && <Error error={error} />}
+            {error != '' && <Error error={error} setError={setError} />}
         </>
     );
 }
