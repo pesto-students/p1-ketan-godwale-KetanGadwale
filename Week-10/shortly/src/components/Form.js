@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form as FormBS, Button } from 'react-bootstrap';
 import Error from './Error';
 
@@ -11,16 +11,19 @@ export default function Form({ url, setUrl, list, setList }) {
     };
 
     const addShortURL = (url) => {
+        if (url === '') {
+            setError('Please enter valid URL');
+            return;
+        }
         let fetchURL = `https://api.shrtco.de/v2/shorten?url=${url}`;
         fetch(fetchURL)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 if (data.ok) {
                     setError('');
                     setList([
-                        ...list,
                         { link: url, short_link: data.result.short_link },
+                        ...list,
                     ]);
                 } else {
                     setError(data.error);
@@ -28,9 +31,13 @@ export default function Form({ url, setUrl, list, setList }) {
             });
     };
 
+    useEffect(() => {
+        list[0] && setUrl(list[0].short_link);
+    }, [list]);
+
     return (
         <>
-            <FormBS>
+            <FormBS onSubmit={handleSubmit}>
                 <FormBS.Control
                     type='text'
                     placeholder='Shorten your link'
@@ -40,7 +47,7 @@ export default function Form({ url, setUrl, list, setList }) {
                     }}
                 />
                 <div className='d-grid gap-2'>
-                    <Button variant='primary' size='lg' onClick={handleSubmit}>
+                    <Button variant='primary' size='lg' type='submit'>
                         Shorten
                     </Button>
                 </div>

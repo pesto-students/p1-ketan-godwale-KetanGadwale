@@ -7,7 +7,7 @@ function Main() {
     const [list, setList] = useState([]);
 
     return (
-        <div className='Form'>
+        <div className='Main'>
             <Form url={url} setUrl={setUrl} list={list} setList={setList} />
             <List list={list} />
         </div>

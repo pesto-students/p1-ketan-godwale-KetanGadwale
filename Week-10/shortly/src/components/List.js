@@ -6,7 +6,7 @@ function List({ list }) {
         <ListGroup>
             {list.map((item) => (
                 <ListGroup.Item key={uuidv4()}>
-                    <span>{item.link}</span> ---
+                    <span>{item.link}</span>
                     <span style={{ color: 'darkorange' }}>
                         {item.short_link}
                     </span>
