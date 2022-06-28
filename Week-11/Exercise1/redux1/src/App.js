@@ -1,9 +1,10 @@
 import { useState } from 'react';
-function App() {
-    const [light, setLight] = useState(true);
+import { connect } from 'react-redux';
+function App(props) {
+    const { light, dispatch } = props;
 
     const switchLight = () => {
-        setLight(!light);
+        dispatch({ type: 'SWITCH' });
     };
 
     const lightedness = light ? 'lit' : 'dark';
@@ -16,4 +17,10 @@ function App() {
     );
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+        light: state,
+    };
+}
+
+export default connect(mapStateToProps)(App);

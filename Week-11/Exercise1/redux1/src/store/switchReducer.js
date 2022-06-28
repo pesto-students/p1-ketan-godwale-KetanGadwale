@@ -1,11 +1,5 @@
-function switchReducer(state, action) {
-    switch (state) {
-        case action:
-            break;
-
-        default:
-            break;
-    }
+function switchReducer(state = false, action) {
+    return !state;
 }
 
 export default switchReducer;
