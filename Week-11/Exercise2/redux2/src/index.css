@@ -16,6 +16,12 @@ code {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95vh;
-    padding: 2em;
+    flex-direction: column;
+    height: 100vh;
+    background-color: antiquewhite;
+    gap: 1em;
+}
+
+button[type='button'] {
+    width: 10em;
 }
