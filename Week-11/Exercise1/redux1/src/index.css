@@ -13,6 +13,19 @@ code {
 }
 
 .App {
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.lit {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
 }
