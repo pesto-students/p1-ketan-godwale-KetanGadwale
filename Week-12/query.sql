@@ -31,3 +31,18 @@ WHERE warehouses.warehouse_id IN (
 		LIMIT 1
 	) temporary_warehouse_data
 );
+
+/*Find an item which is ordered for a minimum number of times.*/
+SELECT items.item_no, items.item_name, items.description, items.weight, items.cost, COUNT(item_id) AS item_count
+FROM order_items
+JOIN items ON order_items.item_id = items.item_no
+GROUP BY items.item_no
+ORDER BY item_count
+LIMIT 1;
+
+/*Find the detailed orders given by each customer.*/
+SELECT * FROM customers
+JOIN cities ON cities.city_id = customers.city_id
+JOIN orders ON orders.customer_id = orders.customer_id
+JOIN order_items ON orders.order_no = order_items.order_id
+JOIN items ON items.item_no = order_items.item_id
