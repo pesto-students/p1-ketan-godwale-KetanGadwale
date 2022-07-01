@@ -31,3 +31,32 @@ CREATE TABLE stores (
 	FOREIGN KEY(warehouse_id) REFERENCES warehouses(warehouse_id),
 	FOREIGN KEY(location_city) REFERENCES cities(city_id)
 );
+
+/*CUSTOMER(CNO INTEGER, CNAME CHAR(50),ADDR VARCHAR(50),CU_CITY CHAR(20))*/
+CREATE TABLE customers (
+	customer_id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	address VARCHAR(50) NOT NULL,
+	city_id INT NOT NULL,
+	PRIMARY KEY(customer_id),
+	FOREIGN KEY(city_id) REFERENCES cities(city_id)
+);
+
+/*ORDERS(ONO INT,ODATE DATE)*/
+CREATE TABLE orders (
+	order_no INT NOT NULL AUTO_INCREMENT,
+	order_date DATE DEFAULT (CURRENT_DATE),
+	customer_id INT NOT NULL,
+	PRIMARY KEY(order_no),
+	FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
+);
+
+/*ITEMS(ITEMNO INTEGER,DESCRIPTION TEXT,WEIGHT DECIMAL(5,2),COST DECIMAL(5,2) )*/
+CREATE TABLE items (
+	item_no INT NOT NULL AUTO_INCREMENT,
+    item_name VARCHAR(30) NOT NULL,
+	description TEXT NOT NULL,
+	weight DECIMAL(5,2),
+	cost DECIMAL(5,2),
+	PRIMARY KEY(item_no)
+);
