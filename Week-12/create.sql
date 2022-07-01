@@ -14,8 +14,8 @@ CREATE TABLE cities(
 CREATE TABLE warehouses (
 	warehouse_id INT NOT NULL AUTO_INCREMENT,
 	city_id INT NOT NULL,
-	name VARCHAR(150) NOT NULL,
-	location VARCHAR(150) NOT NULL,
+	name VARCHAR(30) NOT NULL,
+	location VARCHAR(20) NOT NULL,
 	extra_context JSON,
 	PRIMARY KEY(warehouse_id),
 	FOREIGN KEY(city_id) REFERENCES cities(city_id)
@@ -25,7 +25,7 @@ CREATE TABLE warehouses (
 CREATE TABLE stores (
 	store_id INT NOT NULL AUTO_INCREMENT,
 	warehouse_id INT,
-	name VARCHAR(150) NOT NULL,
+	name VARCHAR(20) NOT NULL,
 	location_city INT NOT NULL,
 	PRIMARY KEY(store_id),  
 	FOREIGN KEY(warehouse_id) REFERENCES warehouses(warehouse_id),
