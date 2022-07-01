@@ -60,3 +60,23 @@ CREATE TABLE items (
 	cost DECIMAL(5,2),
 	PRIMARY KEY(item_no)
 );
+
+/*ITEMS – ORDERS M TO M relationship*/
+CREATE TABLE order_items (
+	id INT NOT NULL AUTO_INCREMENT,
+	item_id INT NOT NULL,
+	order_id INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(item_id) REFERENCES items(item_no),
+	FOREIGN KEY(order_id) REFERENCES orders(order_no)
+);
+
+/*STORES-ITEMS M TO M RELATION*/
+CREATE TABLE store_items (
+	id INT NOT NULL AUTO_INCREMENT,
+	item_id INT NOT NULL,
+	store_id INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(item_id) REFERENCES items(item_no),
+	FOREIGN KEY(store_id) REFERENCES stores(store_id)
+);
